@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>css3遮罩</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*,body,html{
+				background: black;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				word-spacing: -5px;
+			}
+			.box{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			}
+			.box_item{
+				width: 100%;
+				height: 268px;
+				position: relative;
+				background: url(images/bg.png);
+			}
+			.itemmask{
+				top: 0;
+				width: 100%;
+				height: 268px;
+				position: absolute;
+				background: url(images/bg1.png);
+				-webkit-mask-image: url(images/mask.png);
+				-webkit-mask-size: 100px 250px;
+				-webkit-mask-repeat: no-repeat;
+				-webkit-mask-position:-150px;
+				animation: maskplay 8s linear infinite;
+			}
+			@keyframes maskplay{
+				from{-webkit-mask-position:-50%;}
+				to{-webkit-mask-position:150%;}
+			}
+			.heart{
+				background-color: transparent;
+				top: 0;
+				width: 50px;
+				height:50px;
+				position: fixed;
+				left: 50%;
+				top: 180px;
+				transform: translateX(-50%);
+				transition: 3s all;
+				animation: heartplay 2s linear infinite alternate;
+			}
+			@keyframes heartplay{
+				from{transform: scale(0);}
+				to{transform: scale(1);}
+			}
+			.hearttwo{
+				background-color: transparent;
+				top: 0;
+				width: 50px;
+				height:50px;
+				position: fixed;
+				left: 50%;
+				top: 180px;
+				transform: translateX(-50%);
+				transition: 3s all;
+				animation: heartplay 2s linear infinite alternate;
+			}
+			.anime{
+				width: 50px;
+				height: 50px;
+				position: fixed;
+				bottom: 100px;
+				left: 50%;
+				transform: translateX(-50%);
+				animation: clipplay 10s infinite alternate;
+				left: 5%;clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+				opacity: 0.8;
+			}
+			@keyframes clipplay{
+				10%{left: 5%;clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); background-color: #F8E0F7;}
+				20%{left: 5%;clip-path: polygon(50% 0%, 61% 35%, 100% 59%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); background-color:#BE81F7 ;}
+				30%{left: 5%;clip-path: polygon(50% 0%, 61% 35%, 100% 16%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);background-color:#9F81F7 ;}
+				40%{left: 5%;clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 91%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);background-color:#58D3F7 ;}
+				50%{left: 50%;clip-path: polygon(50% 0%, 61% 35%, 100% 67%, 68% 57%, 79% 91%, 50% 91%, 21% 91%, 32% 57%, 0 64%, 39% 35%);background-color:#E0E6F8 ;}
+				60%{left: 50%;clip-path: polygon(50% 0%, 61% 35%, 100% 16%, 68% 57%, 79% 91%, 50% 91%, 21% 91%, 32% 57%, 0 17%, 39% 35%);background-color:#A9F5BC ;}
+				70%{left: 90%;clip-path: polygon(50% 0%, 61% 35%, 100% 47%, 68% 57%, 79% 91%, 50% 91%, 21% 91%, 32% 57%, 0 17%, 39% 35%);background-color:#E1F5A9 ;}
+				80%{left: 90%;clip-path: polygon(50% 0%, 61% 35%, 100% 47%, 68% 57%, 79% 91%, 50% 91%, 21% 91%, 32% 57%, 0 51%, 39% 35%);background-color:#F2F5A9;}
+				90%{left: 90%;clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 0 63%, 39% 35%);background-color: #58FAF4;}
+				100%{left: 90%;clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 0 18%, 39% 35%);background-color:#CC2EFA;}
+			}
+			.zhezhao{
+				width:507px;
+				height: 36px;
+				background-image: url(images/wave.png);
+				-webkit-mask-image: url(images/wavemask.png);
+				-webkit-mask-size: 600px 36px;
+				-webkit-mask-repeat: no-repeat;
+				animation: wavemaskplay infinite 1s alternate linear;
+			}
+			@keyframes wavemaskplay{
+				from{-webkit-mask-position-x:0px;-webkit-mask-position-y:0px;}
+				to{-webkit-mask-position-x:2px;-webkit-mask-position-y:0px;}
+			}
+			.yinlang{
+				width:507px;
+				height: 36px;	
+			}
+			.yinlang .iclassone{
+				width: 2px;
+				display: inline-block;
+				background-color: yellow;
+				margin-left: 2px;
+				animation: iplay 0.5s infinite alternate;
+			}
+			.yinlang .iclasstwo{
+				width: 2px;
+				display: inline-block;
+				background-color: white;
+				margin-left: 2px;
+				animation: iplay 1s infinite alternate;
+			}
+			.yinlang .iclassthree{
+				width: 2px;
+				display: inline-block;
+				background-color: white;
+				margin-left: 2px;
+				animation: iplay 0.6s infinite alternate;
+			}
+			.yinlang .iclassfour{
+				width: 2px;
+				display: inline-block;
+				background-color: white;
+				margin-left: 2px;
+				animation: iplay 0.7 infinite alternate;
+			}
+			.yinlang .iclassfive{
+				width: 2px;
+				display: inline-block;
+				background-color: white;
+				margin-left: 2px;
+				animation: iplay 1.2s infinite alternate;
+			}
+
+			@keyframes iplay{
+				from{height:20px;}
+				to{height:36px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box_item">
+			<div class="itemmask"></div></div>
+		</div>
+		<div class="heart">
+			<img src="images/heart.png" >
+		</div>
+		<div class="hearttwo">
+			<img src="images/heart.png" >
+		</div>
+		<div class="anime"></div>
+		<div class="zhezhao">
+			<img src="images/wave.png" >
+		</div>
+		<div class="yinlang"></div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var heart=document.querySelector('.heart');
+			var hearttwo=document.querySelector('.hearttwo');
+			function randomRange(start,end){
+			    return Math.floor(Math.random()*(end-start+1))+start;
+			};
+			arrx=[20,30,40,50,60];
+			arry=[20,60,70,35];
+			setInterval(function(){
+				randomone=randomRange(0,4);
+				randomtwo=randomRange(0,4);
+				heart.style.left=arrx[randomone]+"%";
+				heart.style.top=arry[randomtwo]+"%";
+			},1000*3.5);
+			setInterval(function(){
+				randomone=randomRange(0,4);
+				randomtwo=randomRange(0,4);
+				hearttwo.style.left=arrx[randomone]+"%";
+				hearttwo.style.top=arry[randomtwo]+"%";
+			},1000*3.5);
+			var classarr=['iclassone','iclasstwo','iclassthree','iclassfour',"iclassfive"];
+			var yinlang=document.querySelector(".yinlang");
+			for(var i=0;i<=120;i++){
+				
+				    var random=Math.floor(Math.random()*(4+1));
+				
+				var iflg=document.createElement("i");
+				iflg.className=classarr[random];
+				yinlang.appendChild(iflg);
+			}
+		}
+	</script>
+</html>

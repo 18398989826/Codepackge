@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS3文字效果</title>
+		<style type="text/css">
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #282c35;
+			}
+
+			.container h1 {
+				position: absolute;
+				display: inline-block;
+				font-size: 6em;
+			}
+
+			.container h1:nth-child(1) {
+				-webkit-text-stroke: 1px blue;
+				color: transparent;
+			}
+
+			.container h1:nth-child(2) {
+				color: #2197cc;
+				animation: play 1s infinite alternate linear;
+			}
+
+			@keyframes play {
+				from {
+					clip-path: polygon(80% 63%, 100% 63%, 100% 63%, 100% 100%, 84% 100%, 50% 100%, 21% 100%, 0 100%, 0 45%, 41% 53%);
+				}
+
+				to {
+					clip-path: polygon(82% 51%, 100% 48%, 100% 63%, 100% 100%, 84% 100%, 50% 100%, 21% 100%, 0 100%, 0 62%, 39% 63%);
+				}
+			}
+
+			.nav {
+				width: 20%;
+				height: 100%;
+				background: palegreen;
+				position: fixed;
+				top: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				clip-path: polygon(0% 0%, 25% 0%,0% 10%,0% 0%);
+				transition: all 1s;
+
+			}
+
+			.nav:hover {
+				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+			}
+
+			.nav h2 {
+				background-size: cover;
+				-webkit-text-stroke: 1px sandybrown;
+				background-image: url(images/bolang.png);
+				-webkit-background-clip: text;
+				color: transparent;
+				animation: textplay 1s infinite alternate;
+			}
+
+			@keyframes textplay {
+				from {
+					background-position: 0% 50%;
+				}
+
+				to {
+					background-position: 100% 100%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>water</h1>
+			<h1>water</h1>
+		</div>
+		<div class="nav">
+			<h2>MyList</h2>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function a(ax,ay,callback){
+			var x=ax;
+			var y=ay;
+			console.log('a');
+			return callback(x,y);
+			
+		}
+		function b(x,y){
+			return x+y;
+		}
+		a(1,2,b);
+	</script>
+	<script type="text/javascript">
+		function Person(name,age){
+			this.name=name;
+			this.age=age;
+			this.myfunction=function(name,age){
+				console.log('我的姓名是'+this.name+'我的年龄是'+this.age);
+			}}
+			function adddata(name,age){
+				var person=new Person(name,age);
+				person.myfunction();
+			}
+			adddata('plm',22);
+			adddata('plm',23);
+	</script>
+	<script type="text/javascript">
+		let arr=[{"name":'plm','age':[0,1,2,{"ax":12}]},{"name":'plm','age':[0,1,2,{"ax":12}]}];
+		arr.forEach(function(value,index,input){
+			console.log(index);
+		})
+		console.log(Object.keys(arr));//遍历索引
+		console.log(Object.values(arr));//遍历值
+		var ax={"name":'plm'};
+		var ay=[0,1,2,3];
+		console.log(typeof(ax),typeof(ay));
+		console.log(ax instanceof Array);
+		console.log(ay instanceof Array);
+	</script>
+	<script type="text/javascript">
+		var str='这是字符串';
+		var strArr=[];
+		for( index of str){
+			strArr.push(index);
+		}
+		console.log(strArr);
+		console.log(str.indexOf('是字'));
+	</script>
+</html>

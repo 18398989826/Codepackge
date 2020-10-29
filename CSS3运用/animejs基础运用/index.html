@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/anime.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>anime.js</title>
+		<style type="text/css">
+			#app{
+				width: 200px;
+				height: 200px;
+				background: #00CCFF;
+				margin: 0 auto;
+				
+			}
+			.myul ul{
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+				list-style: none;
+			}
+			.myul ul li{
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				background: #00FF99;
+			}
+			h3{
+			text-align: center;
+			}
+			.mysvg{
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+			}
+			.svgbox{
+				width: 20px;
+				height: 20px;
+				background: #09090B;
+			}
+			.nextshow{
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+			}
+			.nextshow>div{
+				width: 20px;
+				height: 20px;
+				background: #00E5FF;
+				display: inline-block;
+				opacity: 0;
+			}
+			.imgsx{
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+			}
+			.smallbox{
+				width: 20px;
+				height: 20px;
+				background: #00FF99;
+				display: inline-block;
+				margin-left: 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app"><h3>动画演示</h3></div>
+		
+		<div class="myul">
+			<h3>随机改变透明度</h3>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="mysvg">
+			<h3>svg路径测试</h3>
+			<div class="svgbox"></div>
+			<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+			<style type="text/css">
+				.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+			</style>
+			<path class="st0" d="M97.5,72.5c129,8,173-43,265-5s-394,89-219,173s184-83,233,21s145,110-31,121s-113-42-113-42"/>
+			</svg>
+		</div>
+		<div class="nextshow">
+			<h3>时间轴加载</h3>
+			<div class="ckone"></div>
+			<div class="cktwo"></div>
+			<div class="ckthree"></div>
+			<div class="ckfour"></div>
+			<div class="ckfive"></div>
+			<div class="cksix"></div>
+		</div>
+		<div class="imgsx">
+			<h3>图片切割</h3>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<br>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<br>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+			<div class="smallbox"></div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		var box=anime({
+			 targets: ['#app'],
+			 keyframes:[{translateX: '300px'} ,{rotate: 180}],
+			  borderRadius: ['100%','10%'],
+			  duration: 7000,
+			  loop: true
+		});//动画一
+		function randomValues() {
+		  anime({
+		    targets: '.myul ul li',
+		    opacity: function() {
+		      return anime.random(0.1, 1);
+		    },
+		    easing: 'easeInOutQuad',
+		    duration: 750,
+		    complete: randomValues
+		  });
+		}
+		
+		randomValues();//动画二
+		var path = anime.path('path');
+		
+		anime({
+		  targets: '.svgbox',
+		  translateX: path('x'),
+		  translateY: path('y'),
+		  rotate: path('angle'),
+		  easing: 'linear',
+		  duration: 2000,
+		  loop: true
+		});//动画三
+		// 使用默认参数创建时间轴
+		var tl = anime.timeline({
+		  easing: 'easeOutExpo',
+		  duration: 750,
+		 loop:true,
+		});
+		
+		// 增加子项
+		tl
+		.add({
+		  targets: '.ckone',
+		   opacity:1,
+		   
+		})
+		.add({
+		  targets: '.cktwo',
+		  opacity:1,
+		})
+		.add({
+		  targets: '.ckthree',
+		  opacity:1,
+		})
+		.add({
+		  targets: '.ckfour',
+		  opacity:1,
+		})
+		.add({
+		  targets: '.ckfive',
+		  opacity:1,
+		})
+		.add({
+		  targets: '.cksix',
+		  opacity:1,
+		});
+		
+$(function(){
+	$(".imgsx").click(function(){
+		anime({
+		  targets: '.imgsx .smallbox',
+		  scale: [
+		    {value: .1, easing: 'easeOutSine', duration: 500},
+		    {value: 1, easing: 'easeInOutQuad', duration: 1200}
+		  ],
+		  delay: anime.stagger(200, {grid: [3, 20], from: 'center'})
+		});
+	})
+})
+	</script>
+</html>

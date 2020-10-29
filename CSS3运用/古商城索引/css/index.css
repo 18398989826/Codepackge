@@ -1,0 +1,298 @@
+	*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				/* overflow: hidden; */
+			}
+			body{
+				overflow: hidden;
+			}
+			ul li{
+				padding: 0;
+				margin: 0;
+			}
+			.container{
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.box{
+				width: 1920px;
+				height: 1080px;
+				background:black;
+			}
+			.box .box_ul{
+				width: 1920px;
+				height: 1080px;
+				position: relative;
+				overflow: visible;
+			}
+			.box .box_ul .box_ul_li{
+				width: 1920px;
+				height: 1080px;
+				
+			}
+			.colorone{
+				/* background-image: url(../images/index.png); */
+			}
+			video{
+				position: absolute;
+			}
+			.colorone{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.colortwo{
+				background-image: url(../images/show.png);
+				position: relative;
+				
+			}
+			.index_btn{
+				width: 220px;
+				height: 52px;
+				background-image: url(../images/images/btnbottom.png);
+				color: white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-top: -160px;
+				margin-left: -30px;
+			}
+			.btntop{
+				position: absolute;
+			}
+			.list_btn{
+				width: 300px;
+				height: 1080px;
+				margin-left:113px;
+				overflow: hidden;
+			}
+			.list_box{
+				overflow: visible !important;
+			}
+			.list_one_ul{
+				width: 300px;
+				perspective: 800px;
+				transform-style: preserve-3d;
+				overflow: visible !important;
+				
+			}
+			.list_one_ul li{
+				width: 300px;
+				height: 150px;
+				display: inline-block;
+				position: relative;
+				overflow: hidden;
+				perspective: 800px;
+				
+			}
+			.limax{
+				width: 278px;
+				height: 155px;
+				
+				overflow: hidden;
+			}
+			.list_one{
+				overflow: visible;
+			}
+			.list_one_ul li img:hover{
+				width: 288px;
+				height: 160px;
+				transition: all 1s;
+			}
+			.list_two_ul li img:hover{
+				width: 288px;
+				height: 160px;
+				transition: all 1s;
+			}
+			.list_one_ul li img{
+				width: 278px;
+				height: 150px;
+			}
+			.list_one_ul li span{
+				width: 16px;
+				height: 140px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				
+			}
+			.active{
+				width: 16px;
+				height: 150px;
+				background-image: url(../images/images/active.png);
+			}
+			.aactive{
+				width: 16px;
+				height: 150px;
+				background-image: url(../images/images/active.png);
+			}
+			.back{
+				width: 284px;
+				height: 69px;
+				position: absolute;
+				right: 57px;
+				bottom: 51px;
+				overflow: hidden;
+				z-index: 9999;
+			}
+			.backbg{
+				width: 284px;
+				height: 69px;
+				margin-left: 0px;
+				margin-top: 0px;
+
+			}
+			.backtext{
+				position: absolute;
+				left: 32px;
+				top: 15px;
+			}
+			.backdianleft{
+				position: absolute;
+				left: 7px;
+				top: 23px;
+				animation: dianplay 1s infinite alternate;
+			}
+			.backdianright{
+				position: absolute;
+				right: 7px;
+				top: 23px;
+				animation: dianplay 1s infinite alternate;
+			}
+			@keyframes dianplay{
+				from{
+					opacity: 0;
+				}
+				to{
+					opacity: 1;
+				}
+			}
+			.next{
+				width: 38px;
+				height: 34px;
+				position: absolute;
+				left: 232px;
+				bottom: 60px;
+				z-index: 99;
+				transition: 1s all;
+			}
+			.prev{
+				width: 38px;
+				height: 34px;
+				position: absolute;
+				left: 232px;
+				bottom: 60px;
+				z-index: 99;
+				display: none;
+				transition: 1s all;
+			}
+			.imglist{
+				width: 471px;
+				height: 786px;
+				position: relative;
+				z-index: 999;
+				bottom: 902px;
+				left: 471px;
+				overflow: visible;
+				background: url(../images/images/listtextbg.png);
+				box-shadow: 0px 0px 40px 10px #9a8367;
+				animation: 1s shown infinite alternate linear;
+				
+			}
+			@keyframes shown{
+				from{box-shadow: 0px 0px 40px 10px #9a8367;}
+				to{box-shadow: 0px 0px 40px 0px #9a8367;}
+			}
+			.imgtext{
+				position: absolute;
+				width: 424px;
+				height: 639px;
+				left: 23px;
+				top: 82px;
+				opacity: 0;
+				/* display: none; */
+			}
+			.closebtn{
+				width: 70px;
+				height: 41px;
+				position: absolute;
+				bottom: -10px;
+				left: 210px;
+				opacity: 0;
+				/* display: none; */
+			}
+			.map{
+				position: absolute;
+				width: 1300px;
+				height: 940px;
+				right: 68px;
+				bottom: 72px;
+			}
+			.textinput{
+				width: 316px;
+				height: 112px;
+				background: url(../images/images/textinput.png);
+				position: absolute;
+				right: 530px;
+				top: 176px;
+				z-index: 90;
+				transition: 1s all;
+			}
+			@font-face {
+				font-family:fzltjh;
+				src: url('../font/FZLTHJW.TTF');
+			}
+			@font-face {
+				font-family:fzqkbys;
+				src: url('../font/FZQKBYS.TTF');
+			}
+			.fontp{
+				font-size: 34.5px;
+				color: black;
+				line-height:80px ;
+				text-align: center;
+				font-family:fzltjh;
+				color: #67431d;
+			}
+			.inputtextactive{
+				animation: 1s textplay infinite alternate linear;
+			}
+			@keyframes textplay{
+				from{ transform: translateY(0px);}
+				to{ transform: translateY(-30px);}
+			}
+			.fontlight{
+				width: 60px;
+				height: 700px;
+				position: absolute;
+				top: 280px;
+				font-size: 52px;
+				color: #7b4f20;
+				left: 25px;
+				font-family: fzqkbys;
+				overflow: hidden;
+				        background-image: -webkit-linear-gradient(top, #92490f, #c28658 25%, #492609 50%, #3d2409 75%, #3e250a);
+				        -webkit-text-fill-color: transparent;
+				        -webkit-background-clip: text;
+				        -webkit-background-size: 100% 200%;
+				        -webkit-animation: slideShine 5s infinite linear alternate;
+		}
+
+				@-webkit-keyframes slideShine{
+				         0%{ background-position: 0 0;}
+				                100% { background-position: 0 100%;}
+				   }
+				   .list_box{
+					   transition: 1s all;
+				   }
+				   .stars{
+					   position: absolute;
+					   width: 20px;
+					   height: 20px;
+					   top: 160px;
+					   left: 700px;
+					   transform: translateX(50px) translateY(50px);
+				   }

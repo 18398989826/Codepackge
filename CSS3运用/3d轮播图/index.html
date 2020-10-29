@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container {
+				width: 1000px;
+				height: 460px;
+				background: pink;
+			}
+
+			.container .box_ul {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				list-style: none;
+				transform-style: preserve-3d;
+				perspective: 2000px;
+			}
+
+			.container .box_ul .box_Ul_li {
+				height: 100%;
+				background: skyblue;
+				position: relative;
+				transform: rotateX(0deg);
+				transform-style: preserve-3d;
+				float: left;
+				margin-left: -1px;
+				
+			}
+
+			.container .box_ul .box_Ul_li>span {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+			}
+
+			.container .box_ul .box_Ul_li span:nth-of-type(1) {
+				transform: translateZ(230px);
+			}
+
+			.container .box_ul .box_Ul_li span:nth-of-type(2) {
+				transform: translateY(-230px) rotateX(90deg);
+
+			}
+
+			.container .box_ul .box_Ul_li span:nth-of-type(3) {
+				transform: translateZ(-230px) rotateX(-180deg);
+			}
+
+			.container .box_ul .box_Ul_li span:nth-of-type(4) {
+				transform: translateY(230px) rotateX(-90deg);
+			}
+			.leftprev,.rightnext{
+				position: absolute;
+				background: #87CEEB;
+				font-size: 60px;
+				text-align: center;
+				width: 80px;
+				height: 80px;
+				line-height: 80px;
+				border-radius: 50%;
+			}
+			.leftprev{
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.rightnext{
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.box_Ul_li span:nth-of-type(1){
+				background: url(images/1.jpg);
+			}
+			.box_Ul_li span:nth-of-type(2){
+				background: url(images/2.jpg);
+			}
+			.box_Ul_li span:nth-of-type(3){
+				background: url(images/3.jpg);
+			}
+			.box_Ul_li span:nth-of-type(4){
+				background: url(images/4.jpg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul class="box_ul">
+			</ul>
+			<div class="leftprev"><</div>
+			<div class="rightnext">></div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			let containerW = $('.container').width();
+			let liCount = 35;
+			let liW = containerW / liCount;
+			for(let i=0;i<liCount;i++){
+				$(".box_ul").append(`
+				<li class="box_Ul_li">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</li>
+				`)
+			}
+			$('.box_Ul_li').each((index,item)=>{
+				$(item).css({"width":liW+"px","transition":"0.5s","transition-delay":index*0.1+"s"});
+				$(item).find("span").css({"background-position":-index*liW+"px"})
+			})
+			let index=0//记录点击索引
+			let clickstatus=true;//控制重复点击
+			$('.leftprev').click(function(){
+				if(clickstatus){
+					index--;
+					clickstatus=false;
+					$('.box_Ul_li').css({"transform":`rotateX(${index*90}deg)`});
+				}
+				
+			})
+			$('.rightnext').click(function(){
+				if(clickstatus){
+				index++;
+				clickstatus=false;
+				$('.box_Ul_li').css({"transform":`rotateX(${index*90}deg)`})	
+				}
+			})
+			$("li:last").on("transitionend",function(){
+				clickstatus=true;
+			})
+		})
+	</script>
+</html>

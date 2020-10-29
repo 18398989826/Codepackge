@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Header</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		header{
+			width: 100%;
+			height: 60px;
+			background: #a7e494;
+		}
+		header .headerUl{
+			width: 100%;
+			height: 60px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		header .headerUl .headerUl_li{
+			width: 200px;
+			text-align: center;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			font-size: 24px;
+			font-family: monospace;
+		}
+		header .headerUl .headerUl_li .title{
+			width: 100%;
+			height: 100%;
+			background: #a7e494;
+			position: relative;
+			transition: 0.6s all;
+		}
+		header .headerUl .headerUl_li:hover.headerUl_li .title{
+			transform: translateY(-60px);
+		}
+		header .headerUl .headerUl_li .title .title_text,header .headerUl .headerUl_li .title .title_text_hover{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #1a5a40;
+		}
+		header .headerUl .headerUl_li .title .title_text_hover{
+			color: aqua;
+			background: linear-gradient(to right,#48bb66,#cc6581);
+			animation: title_text_hoverPlay 1s infinite alternate linear;
+		}
+		@keyframes title_text_hoverPlay{
+			to{clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);}
+			from{clip-path: polygon(50% 0%, 100% 100%, 50% 100%, 0 100%);}
+		}
+		@media screen and (max-width: 415px) {
+		  header .headerUl{
+		  	width: 100%;
+		  	height: 100%;
+		  	display: flex;
+		  	justify-content: center;
+			flex-wrap: wrap;
+		  	align-items: center;
+		  }
+		  header .headerUl .headerUl_li{
+		  	width: 100%;
+		  	text-align: center;
+		  	height: 100%;
+		  	display: flex;
+		  	justify-content: center;
+		  	align-items: center;
+		  	overflow: hidden;
+		  }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul class="headerUl">
+			<li class="headerUl_li"><div class="title"><div class="title_text">Home</div><div class="title_text_hover">Home</div></div></li>
+			<li class="headerUl_li"><div class="title"><div class="title_text">Web前端</div><div class="title_text_hover">Web前端</div></div></li>
+			<li class="headerUl_li"><div class="title"><div class="title_text">Linux操作</div><div class="title_text_hover">Linux操作</div></div></li>
+			<li class="headerUl_li"><div class="title"><div class="title_text">采坑日记</div><div class="title_text_hover">采坑日记</div></div></li>
+			<li class="headerUl_li"><div class="title"><div class="title_text">关于&留言</div><div class="title_text_hover">关于&留言</div></div></li>
+		</ul>
+	</header>
+</body>
+</html>

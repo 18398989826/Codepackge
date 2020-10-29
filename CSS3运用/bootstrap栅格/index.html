@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap 实例</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+	  html,body{
+		  height: 100%;
+		  margin: 0;
+		  padding: 0;
+	  }
+	  ul{
+		  list-style: none;
+	  }
+  	.leftnav{
+		background: blueviolet;
+		height:100%;
+		margin: 0;
+		padding: 0;
+	}
+	.rightcontent{
+		background: #0080FF;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+	}
+	.phonenav{
+		background: #00B7FF;
+		font-size: 26px;
+		height: 60px;
+		transition:height 1s; 
+	}
+	.phonenav_ul{
+		text-align: center;
+		color: white;
+	}
+	.phonenav:hover{
+		/* display: block; */
+		height: 340px;
+	}
+	.myico{
+		height: 60px;
+		line-height: 60px;
+		font-size: 30px;
+		text-align: center;
+	}
+	.leftnav_ul{
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		color: white;
+	}
+	.leftnav_ul li{
+		height: 50px;
+		line-height: 50px;
+		font-size: 20px;
+		border-bottom: 1px solid white;
+	}
+	.leftnav_ul li:hover{
+		background: #9ACFEA;
+	}
+  </style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row visible-xs-block phonenav">
+			<div class="myico">
+				 🍀○（＊￣︶￣＊）○🍀
+			</div>
+			<ul class="phonenav_ul">
+				<li class="phonenav_ul_li">这是列表一</li>
+				<li class="phonenav_ul_li">这是列表二</li>
+				<li class="phonenav_ul_li">这是列表三</li>
+				<li class="phonenav_ul_li">这是列表四</li>
+				<li class="phonenav_ul_li">这是列表五</li>
+				<li class="phonenav_ul_li">这是列表六</li>
+				<li class="phonenav_ul_li">这是列表七</li>
+			</ul>
+		</div>
+		<div class="row">
+			<div class="col-md-3 hidden-xs col-sm-3 leftnav" >
+				我在PC占三份
+				<ul class="leftnav_ul">
+					<li class="leftnav_ul_li">这是列表一</li>
+					<li class="leftnav_ul_li">这是列表二</li>
+					<li class="leftnav_ul_li">这是列表三</li>
+					<li class="leftnav_ul_li">这是列表四</li>
+					<li class="leftnav_ul_li">这是列表五</li>
+					<li class="leftnav_ul_li">这是列表六</li>
+					<li class="leftnav_ul_li">这是列表七</li>
+					<li class="leftnav_ul_li">这是列表八</li>
+				</ul>
+			</div>
+			<div class="col-md-9 col-xs-12 col-sm-9 rightcontent">
+				<h1>我在PC占九份</h1>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

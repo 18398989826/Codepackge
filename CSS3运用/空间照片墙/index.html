@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3维照片墙</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".container").addClass("containeractive");
+				$(".box ul li").click(function(){
+					var index=$(this).index();
+					$("li:eq("+index+")").addClass("active").siblings().removeClass("active");
+					if($(".box").hasClass("boxactive")){
+						$(".box").removeClass("boxactive");
+					}
+					else{
+						$(".box").addClass("boxactive");
+					}
+					
+				})
+			})
+		</script>
+		<style type="text/css">
+			*,body{
+				margin: 0;
+				padding: 0;
+			}
+			.container{
+				width: 120rem;
+				height: 67.5rem;
+				background: linear-gradient(to bottom, #ffff , #000);
+				perspective: 1px;
+				position: relative;
+					transition: 2s all;
+			}
+			.containeractive{
+				perspective: 1000px;
+				transition: 6s all;
+			}
+			.box{
+				transition: 2s all;
+			}
+			.box ul li{
+				width: 15rem;
+				height: 20rem;
+				background: #000000;
+				position: absolute;
+				transition: 2s all;
+			}
+			.li_one{
+				left: 20rem;
+				top: 15rem;
+				transform: translateZ(-265rem);
+			}
+			.li_two{
+				left: 35rem;
+				top: 40rem;
+				transform: translateZ(-80rem);
+				opacity: 0.3;
+			}
+			.li_three{
+				left: 60rem;
+				top: 15rem;
+				transform: translateZ(-100rem);
+				opacity: 0.3;
+			}
+			.li_four{
+				left: 18rem;
+				top: 45rem;
+				transform: translateZ(-75rem);
+				opacity: 0.3;
+			}
+			.li_five{
+				left: 5rem;
+				top: 25rem;
+				transform: translateZ(-40rem);
+			}
+			.li_six{
+				left:-15rem;
+				top: 5rem;
+				transform: translateZ(-40rem);
+				opacity: 0.3;
+			}
+			.li_seven{
+				left:25rem;
+				top: 5rem;
+				transform: translateZ(-40rem);
+				
+			}
+			.li_eight{
+				left:7rem;
+				top: -18rem;
+				transform: translateZ(-40rem);
+				opacity: 0.3;
+			}
+			.li_nine{
+				left:85rem;
+				top: -6rem;
+				transform: translateZ(30rem);
+				opacity: 0.3;
+			}
+			.li_ten{
+				left:57rem;
+				top: -14rem;
+				transform: translateZ(-60rem);
+			}
+			.active{
+				left: 50%;
+				top: 50%;
+				transform: translateZ(300px) translate(-114%,-91%);
+				transition: 2s all;
+				z-index: 99;
+			}
+			.boxactive{
+				margin-left: 11rem;
+				margin-top: 11rem;
+				transition: 2s all;
+				
+			}
+			ul>div{
+				transition: 2s all;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">
+				<ul>
+					<li class="li_one"><img src="images/1.png" ></li>
+					<li class="li_two">2</li>
+					<li class="li_three">3</li>
+					<li class="li_four">4</li>
+					<li class="li_five"><img src="images/2.png" ></li>
+					<li class="li_six">6</li>
+					<li class="li_seven"><img src="images/4.png" ></li>
+					<li class="li_eight">6</li>
+					<li class="li_nine">6</li>
+					<li class="li_ten"><img src="images/3.png" ></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
